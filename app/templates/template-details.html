@@ -1,0 +1,42 @@
+<div>
+  <a href="#templates/">back</a>
+  <br>
+  <br>
+  <div class="col-md-4">
+    <img class="img-full" src="img/{{MainImage}}" alt="">
+    <div class="row">
+      <div ng-repeat="image in template.images | limitTo:4">
+        <div class="col-md-3">
+          <img ng-src="img/{{image.name}}" class="img-full" ng-click="setImage(image)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h3>{{template.name}}</h3>
+    <p>{{template.description}}</p>
+    <p>Type: {{template.type}}</p>
+    <h4>{{template.price | currency}}</h4>
+
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="jamie@naioti.com">
+      <input type="hidden" name="lc" value="BM">
+      <input type="hidden" name="item_name" value="{{template.name}}">
+      <input type="hidden" name="item_number" value="{{template.id}}">
+      <input type="hidden" name="amount" value="{{template.price}}">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="button_subtype" value="services">
+      <input type="hidden" name="no_note" value="0">
+      <input type="hidden" name="tax_rate" value="10.000">
+      <input type="hidden" name="shipping" value="9.99">
+      <input type="hidden" name="return" value="http://localhost:8000">
+      <input type="hidden" name="cancel_return" value="http://localhost:8000">
+
+            
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+  </div>
+</div>
