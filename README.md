@@ -1,3 +1,20 @@
+# This is a completed tutorial that uses Angular and Angular-seed as a boilerplate
+
+below are the instructions for running angular-seed,
+
+basically you
+
+```
+npm install
+```
+
+then to start
+
+```
+npm start
+```
+
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
